@@ -1,0 +1,28 @@
+<div class="w3-panel w3-card-2">
+    <div class="w3-container w3-teal w3-panel w3-card-2">
+        <h2>Paketgröße</h2>
+    </div>
+
+    <form class="w3-container" name="parcel-size" data-ng-submit="$ctrl.getGirthSize()">
+        <label class="w3-text-teal">Länge</label>
+        <input class="w3-input" type="number" data-ng-init="$ctrl.size.length = 3" data-ng-model="$ctrl.size.length"
+               required>
+        <label class="w3-text-teal">Breite</label>
+        <input class="w3-input" type="number" data-ng-init="$ctrl.size.width = 4" data-ng-model="$ctrl.size.width"
+               required>
+        <label class="w3-text-teal">Tiefe</label>
+        <input class="w3-input" type="number" data-ng-init="$ctrl.size.height = 5" data-ng-model="$ctrl.size.height"
+               required>
+        <p>
+        <div class="w3-row">
+            <div class="w3-half">
+                <button class="w3-btn w3-blue-grey">Größe berechnen</button>
+            </div>
+            <div class="w3-half">
+                <label class="w3-text-teal">Gurtmass</label>
+                <input class="w3-input" type="text" data-ng-model="gurtmass" disabled>
+            </div>
+        </div>
+        </p>
+    </form>
+</div>
