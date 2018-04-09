@@ -1,10 +1,7 @@
 var express = require("express");
-var path = require("path");
 var app = express();
 var port = 8080;
 
-// app.set('view engine', 'pug');
-// app.set('views', path.join(__dirname, '/views'));
 app.use(express.static('./'));
 
 app.route('/api/getGirthSize').get(function (req, res) {
@@ -18,7 +15,7 @@ app.route('/api/getGirthSize').get(function (req, res) {
         else if (input > 65 && input <= 80) size = "L";
         else if (input > 80 && input <= 300) size = "XL";
         res.json({size: size});
-    }
+    } else res.end();
 });
 
 app.route("/*").get(function (req, res) {

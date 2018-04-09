@@ -4,22 +4,22 @@
     </div>
 
     <form class="w3-container" name="parcel-size" data-ng-submit="$ctrl.getGirthSize()">
-        <label class="w3-text-teal">Länge</label>
-        <input class="w3-input" type="number" data-ng-init="$ctrl.size.length = 3" data-ng-model="$ctrl.size.length"
+        <label>Länge</label>
+        <input name="length" class="w3-input" type="number" data-ng-model="$ctrl.size.length" min="0"
                required>
-        <label class="w3-text-teal">Breite</label>
-        <input class="w3-input" type="number" data-ng-init="$ctrl.size.width = 4" data-ng-model="$ctrl.size.width"
+        <label>Breite</label>
+        <input name="width" class="w3-input" type="number" data-ng-model="$ctrl.size.width" min="0"
                required>
-        <label class="w3-text-teal">Tiefe</label>
-        <input class="w3-input" type="number" data-ng-init="$ctrl.size.height = 5" data-ng-model="$ctrl.size.height"
+        <label>Tiefe</label>
+        <input name="height" class="w3-input" type="number" data-ng-model="$ctrl.size.height" min="0"
                required>
         <p>
         <div class="w3-row">
             <div class="w3-half">
-                <button class="w3-btn w3-blue-grey">Größe berechnen</button>
+                <button class="w3-btn w3-blue-grey" type="submit">Größe berechnen</button>
             </div>
             <div class="w3-half">
-                <label class="w3-text-teal">Gurtmass</label>
+                <label>Gurtmass</label>
                 <input class="w3-input" type="text" data-ng-model="gurtmass" disabled>
             </div>
         </div>
