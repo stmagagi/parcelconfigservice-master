@@ -1,9 +1,11 @@
 let express = require("express");
 let mongoose = require("mongoose");
 let size = require('./models/size')(mongoose);
+let cors = require('cors');
 let app = express();
 let port = 8082;
 
+app.use(cors());
 app.route('/api/getGirthSize').get(function (req, res) {
     let self = JSON.parse(req.query.size);
     if (self) {
