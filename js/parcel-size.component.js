@@ -9,7 +9,7 @@ angular.module('parcelConfig').component('parcelSize', {
         };
         this.getGirthSize = function () {
             $http({
-                url: "/api/getGirthSize",
+                url: "http://localhost:8082/api/getGirthSize",
                 method: "GET",
                 params: {size: this.size}
             }).then(function (res) {

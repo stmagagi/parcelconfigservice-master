@@ -1,0 +1,23 @@
+{
+  "name": "parcelconfigservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/paulbu/parcelconfigservice.git"
+  },
+  "author": "Paul Buskovskij",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/paulbu/parcelconfigservice/issues"
+  },
+  "homepage": "https://gitlab.com/paulbu/parcelconfigservice#README",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.0.16"
+  }
+}
