@@ -18,12 +18,11 @@ app.route('/api/getGirthSize').get(function (req, res) {
     } else res.status(428).send("Es wurde keine Größe übergeben.");
 });
 
-let promise = mongoose.connect('mongodb://localhost/pcs', function () {
+let promise = mongoose.connect('mongodb://192.168.178.27:27017/pcs', function () {
     app.listen(port, function () {
         console.info("http://localhost:" + port);
     });
 });
-
 console.info(promise);
 
 process.on("SIGINT", function () {
