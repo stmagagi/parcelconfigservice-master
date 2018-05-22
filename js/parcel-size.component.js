@@ -1,6 +1,6 @@
 angular.module('parcelConfig').component('parcelSize', {
     transclude: true,
-    templateUrl: "html/parcelSize.html",
+    templateUrl: "http://192.168.50.11/ui/html/parcelSize.html",
     controller: function ParcelSizeController($scope, $http) {
         this.size = {
             length: 3,
