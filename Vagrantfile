@@ -66,9 +66,12 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y docker.io
-    docker import http://192.168.50.11/images/mongodb.tar mongodb
-    docker import http://192.168.50.11/images/pcservice.tar pcservice
-    docker import http://192.168.50.11/images/pcserver.tar pcserver
+    curl -O http:/192.168.50.11/images/mongodb.tar.gz
+    curl -O http:/192.168.50.11/images/pcservice.tar.gz
+    curl -O http:/192.168.50.11/images/pcserver.tar.gz
+    docker load -i mongodb.tar.gz
+    docker load -i pcservice.tar.gz
+    docker load -i pcserver.tar.gz
     # docker network create pcnetwork
     docker run --name="mongodb" --network="pcnetwork" -d mongodb
     docker run -p 8081:8081 --name="pcserver" --network="pcnetwork" -d pcserver
