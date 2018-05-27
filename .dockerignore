@@ -2,5 +2,7 @@ node_modules
 npm-debug.log
 pcservice.tar
 .vagrant
+.git
+.idea
 ubuntu-bionic-18.04-cloudimg-console.log
 Vagrantfile
