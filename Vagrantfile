@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
   #
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
-  #  vb.gui = true
+    # vb.gui = true
     # Customize the amount of memory on the VM:
     vb.memory = "3072"
     vb.name = "web-server"
@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
     docker import http://192.168.50.11/images/mongodb.tar mongodb
     docker import http://192.168.50.11/images/pcservice.tar pcservice
     docker import http://192.168.50.11/images/pcserver.tar pcserver
-    docker network create pcnetwork
+    # docker network create pcnetwork
     docker run --name="mongodb" --network="pcnetwork" -d mongodb
     docker run -p 8081:8081 --name="pcserver" --network="pcnetwork" -d pcserver
     docker run -p 8082:8082 --name="pcservice" --network="pcnetwork" -d pcservice
