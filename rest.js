@@ -5,7 +5,7 @@ let size = require('./models/size')(mongoose);
 let cors = require('cors');
 let app = express();
 let port = 8082;
-let mongo_url = process.env.MONGO_URL || 'mongodb://192.168.50.10:27017/pcs/' || 'mongodb://localhost:27017/pcs';
+let mongo_url = process.env.MONGO_URL || 'mongodb://192.168.50.10:27017/pcs' || 'mongodb://localhost:27017/pcs';
 
 console.log("mongo_url", mongo_url, typeof mongo_url);
 
