@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/bionic64"
+  config.vm.define "web-server-test"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -67,4 +68,16 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install -y docker.io
   SHELL
+  if File.file?("/Users/paul/.jenkins/workspace/PC-Asset/integration-asset.sh")
+      config.vm.provision "integration-asset", type: "file" do |f|
+        f.source = "/Users/paul/.jenkins/workspace/PC-Asset/integration-asset.sh"
+        f.destination = "~/integration-asset.sh"
+      end
+  end
+  if File.file?("/Users/paul/.jenkins/workspace/PC-Server/integration-server.sh")
+        config.vm.provision "integration-server", type: "file" do |f|
+          f.source = "/Users/paul/.jenkins/workspace/PC-Asset/integration-server.sh"
+          f.destination = "~/integration-server.sh"
+        end
+    end
 end
