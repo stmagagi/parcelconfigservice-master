@@ -75,9 +75,15 @@ Vagrant.configure("2") do |config|
       end
   end
   if File.file?("/Users/paul/.jenkins/workspace/PC-Server/integration-server.sh")
-        config.vm.provision "integration-server", type: "file" do |f|
-          f.source = "/Users/paul/.jenkins/workspace/PC-Server/integration-server.sh"
-          f.destination = "~/integration-server.sh"
-        end
-    end
+      config.vm.provision "integration-server", type: "file" do |f|
+        f.source = "/Users/paul/.jenkins/workspace/PC-Server/integration-server.sh"
+        f.destination = "~/integration-server.sh"
+      end
+  end
+  if File.file?("/Users/paul/.jenkins/workspace/PC-Service/integration-service.sh")
+       config.vm.provision "integration-service", type: "file" do |f|
+         f.source = "/Users/paul/.jenkins/workspace/PC-Service/integration-service.sh"
+         f.destination = "~/integration-service.sh"
+       end
+  end
 end
