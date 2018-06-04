@@ -12,6 +12,8 @@ fi
 echo "Network checked!"
 echo "Docker container stop ..."
 docker stop pcservice
+echo "Docker container remove ..."
+docker rm pcservice
 echo "Docker container create ..."
 docker run -p 8082:8082 --name="pcservice" --network="pcnetwork" -d pcservice
 echo "Docker container running ..."
