@@ -68,21 +68,21 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install -y docker.io
   SHELL
-  if File.file?("/Users/paul/.jenkins/workspace/PC-Asset/integration-asset.sh")
+  if File.file?("/Users/gagiyev/.jenkins/workspace/cd-projekt/integration-asset.sh")
       config.vm.provision "integration-asset", type: "file" do |f|
-        f.source = "/Users/paul/.jenkins/workspace/PC-Asset/integration-asset.sh"
+        f.source = "/Users/gagiyev/.jenkins/workspace/cd-projekt/integration-asset.sh"
         f.destination = "~/integration-asset.sh"
       end
   end
-  if File.file?("/Users/paul/.jenkins/workspace/PC-Server/integration-server.sh")
+  if File.file?("/Users/gagiyev/.jenkins/workspace/web-server/integration-server.sh")
       config.vm.provision "integration-server", type: "file" do |f|
-        f.source = "/Users/paul/.jenkins/workspace/PC-Server/integration-server.sh"
+        f.source = "/Users/gagiyev/.jenkins/workspace/web-server/integration-server.sh"
         f.destination = "~/integration-server.sh"
       end
   end
-  if File.file?("/Users/paul/.jenkins/workspace/PC-Service/integration-service.sh")
+  if File.file?("/Users/gagiyev/.jenkins/workspace/web-service/integration-service.sh")
        config.vm.provision "integration-service", type: "file" do |f|
-         f.source = "/Users/paul/.jenkins/workspace/PC-Service/integration-service.sh"
+         f.source = "/Users/gagiyev/.jenkins/workspace/web-service/integration-service.sh"
          f.destination = "~/integration-service.sh"
        end
   end
